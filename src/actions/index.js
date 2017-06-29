@@ -8,5 +8,5 @@ export const FETCH_POSTS = 'FETCH_POSTS';
 
 export const fetchPosts = () => ({
     type: FETCH_POSTS,
-    action: axios.get(`${ROOT_URL}/posts${API_KEY}`)
+    payload: axios.get(`${ROOT_URL}/posts${API_KEY}`)
 });
