@@ -10,3 +10,13 @@ export const fetchPosts = () => ({
     type: FETCH_POSTS,
     payload: axios.get(`${ROOT_URL}/posts${API_KEY}`)
 });
+
+
+export const CREATE_POST = 'CREATE_POST';
+
+export const createPost = (values, callback) => ({
+    type: CREATE_POST,
+    payload: axios.post(`${ROOT_URL}/posts${API_KEY}`, values).then(res => {
+        callback();
+    })
+});
